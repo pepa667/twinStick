@@ -1,0 +1,9 @@
+[submodule "firmware/nexus-ui-rp2040/src/HOJA-LIB-ESP32"]
+	path = firmware/nexus-ui-rp2040/src/HOJA-LIB-ESP32
+	url = git@github.com:Opus667/HOJA-LIB-ESP32.git
+[submodule "firmware/hydra-core-esp32/src/HOJA-ESP32-Baseband"]
+	path = firmware/hydra-core-esp32/src/HOJA-ESP32-Baseband
+	url = git@github.com:Opus667/HOJA-ESP32-Baseband.git
+[submodule "firmware/nexus-ui-rp2040/src/HOJA-LIB-RP2040"]
+	path = firmware/nexus-ui-rp2040/src/HOJA-LIB-RP2040
+	url = git@github.com:Opus667/HOJA-LIB-RP2040.git

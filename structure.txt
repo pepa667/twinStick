@@ -1,0 +1,370 @@
+.
+├── LICENSE
+├── README.md
+├── docs
+│   ├── architecture.md
+│   ├── button_mapping.md
+│   ├── twinstick_github_template.zip 00-16-19-358.zip
+│   └── twinstick_readmes.zip
+├── firmware
+│   ├── hydra-core-esp32
+│   │   ├── ESP-IDF.md
+│   │   ├── README.md
+│   │   ├── examples
+│   │   ├── hydra_core
+│   │   │   └── hydra_core.ino
+│   │   ├── lib
+│   │   └── src
+│   │       └── hoja-esp32-baseband
+│   │           ├── CMakeLists.txt
+│   │           ├── README.md
+│   │           ├── build
+│   │           │   ├── ESP32.bin
+│   │           │   ├── bootloader
+│   │           │   │   └── bootloader.bin
+│   │           │   ├── gdbinit
+│   │           │   │   ├── connect
+│   │           │   │   ├── gdbinit
+│   │           │   │   ├── prefix_map
+│   │           │   │   ├── py_extensions
+│   │           │   │   └── symbols
+│   │           │   └── partition_table
+│   │           │       └── partition-table.bin
+│   │           ├── main
+│   │           │   ├── CMakeLists.txt
+│   │           │   ├── core_bt_sinput.c
+│   │           │   ├── core_bt_switch.c
+│   │           │   ├── esp_hid_gap.c
+│   │           │   ├── imu_tool.c
+│   │           │   ├── include
+│   │           │   │   ├── core_bt_sinput.h
+│   │           │   │   ├── core_bt_switch.h
+│   │           │   │   ├── crosscore_snapshot.h
+│   │           │   │   ├── esp_hid_gap.h
+│   │           │   │   ├── hoja.h
+│   │           │   │   ├── hoja_includes.h
+│   │           │   │   ├── hoja_types.h
+│   │           │   │   ├── imu_tool.h
+│   │           │   │   ├── interval.h
+│   │           │   │   ├── mitch_i2c.h
+│   │           │   │   ├── switch
+│   │           │   │   │   ├── switch_analog.h
+│   │           │   │   │   ├── switch_commands.h
+│   │           │   │   │   ├── switch_haptics.h
+│   │           │   │   │   └── switch_spi.h
+│   │           │   │   └── util_bt_hid.h
+│   │           │   ├── interval.c
+│   │           │   ├── main.c
+│   │           │   ├── mitch_i2c.c
+│   │           │   ├── switch_analog.c
+│   │           │   ├── switch_commands.c
+│   │           │   ├── switch_haptics.c
+│   │           │   ├── switch_spi.c
+│   │           │   └── util_bt_hid.c
+│   │           ├── manifest.json
+│   │           ├── notes.txt
+│   │           ├── sdkconfig
+│   │           ├── sdkconfig.bak
+│   │           └── sdkconfig.old
+│   └── nexus-ui-rp2040
+│       ├── README.md
+│       ├── display
+│       ├── input
+│       ├── menu
+│       ├── miicropython-tests.zip
+│       └── src
+│           ├── board_config.h
+│           ├── hoja-lib-rp2040
+│           │   ├── CMakeLists.txt
+│           │   ├── README.md
+│           │   ├── include
+│           │   │   ├── devices
+│           │   │   │   ├── animations
+│           │   │   │   │   ├── anm_breathe.h
+│           │   │   │   │   ├── anm_fairy.h
+│           │   │   │   │   ├── anm_handler.h
+│           │   │   │   │   ├── anm_idle.h
+│           │   │   │   │   ├── anm_none.h
+│           │   │   │   │   ├── anm_rainbow.h
+│           │   │   │   │   ├── anm_react.h
+│           │   │   │   │   ├── anm_shutdown.h
+│           │   │   │   │   ├── anm_utility.h
+│           │   │   │   │   ├── or_flash.h
+│           │   │   │   │   ├── or_indicate.h
+│           │   │   │   │   ├── ply_blink.h
+│           │   │   │   │   ├── ply_chase.h
+│           │   │   │   │   ├── ply_idle.h
+│           │   │   │   │   └── ply_shutdown.h
+│           │   │   │   ├── battery.h
+│           │   │   │   ├── bluetooth.h
+│           │   │   │   ├── btinput.h
+│           │   │   │   ├── devices.h
+│           │   │   │   ├── fuelgauge.h
+│           │   │   │   ├── haptics.h
+│           │   │   │   ├── rgb.h
+│           │   │   │   └── wlan.h
+│           │   │   ├── devices_shared_types.h
+│           │   │   ├── driver_define_helper.h
+│           │   │   ├── drivers
+│           │   │   │   ├── adc
+│           │   │   │   │   └── mcp3002.h
+│           │   │   │   ├── battery
+│           │   │   │   │   └── bq25180.h
+│           │   │   │   ├── bluetooth
+│           │   │   │   │   └── esp32_hojabaseband.h
+│           │   │   │   ├── fuelgauge
+│           │   │   │   │   ├── adc_fuelgauge.h
+│           │   │   │   │   └── bq27621g1.h
+│           │   │   │   ├── haptic
+│           │   │   │   │   └── drv2605l.h
+│           │   │   │   ├── imu
+│           │   │   │   │   └── lsm6dsr.h
+│           │   │   │   └── mux
+│           │   │   │       ├── pi3usb4000a.h
+│           │   │   │       └── tmux1204.h
+│           │   │   ├── hal
+│           │   │   │   ├── adc_hal.h
+│           │   │   │   ├── bluetooth_hal.h
+│           │   │   │   ├── erm_hal.h
+│           │   │   │   ├── flash_hal.h
+│           │   │   │   ├── gpio_hal.h
+│           │   │   │   ├── hal.h
+│           │   │   │   ├── i2c_hal.h
+│           │   │   │   ├── joybus_gc_hal.h
+│           │   │   │   ├── joybus_n64_hal.h
+│           │   │   │   ├── lra_hal.h
+│           │   │   │   ├── mutex_hal.h
+│           │   │   │   ├── nesbus_hal.h
+│           │   │   │   ├── rgb_hal.h
+│           │   │   │   ├── rp2040
+│           │   │   │   │   ├── btstack_config.h
+│           │   │   │   │   ├── hoja_bsp.h
+│           │   │   │   │   ├── lwipopts.h
+│           │   │   │   │   └── tusb_config.h
+│           │   │   │   ├── sdrumble_hal.h
+│           │   │   │   ├── spi_hal.h
+│           │   │   │   ├── sys_hal.h
+│           │   │   │   ├── usb_hal.h
+│           │   │   │   └── wlan_hal.h
+│           │   │   ├── hoja.h
+│           │   │   ├── hoja_defines.h
+│           │   │   ├── hoja_shared_types.h
+│           │   │   ├── input
+│           │   │   │   ├── analog.h
+│           │   │   │   ├── dpad.h
+│           │   │   │   ├── hover.h
+│           │   │   │   ├── idle_manager.h
+│           │   │   │   ├── imu notes.txt
+│           │   │   │   ├── imu.h
+│           │   │   │   ├── macros
+│           │   │   │   │   ├── macro_pairing.h
+│           │   │   │   │   ├── macro_pcmdebug.h
+│           │   │   │   │   ├── macro_shutdown.h
+│           │   │   │   │   └── macro_tourney.h
+│           │   │   │   ├── macros.h
+│           │   │   │   ├── mapper.h
+│           │   │   │   ├── snapback
+│           │   │   │   │   ├── snapback_auto.h
+│           │   │   │   │   ├── snapback_lpf.h
+│           │   │   │   │   └── snapback_utils.h
+│           │   │   │   ├── snapback.h
+│           │   │   │   ├── stick_deadzone.h
+│           │   │   │   └── stick_scaling.h
+│           │   │   ├── input_shared_types.h
+│           │   │   ├── rgb_define_helper.h
+│           │   │   ├── settings_shared_types.h
+│           │   │   ├── switch
+│           │   │   │   ├── switch_analog.h
+│           │   │   │   ├── switch_commands.h
+│           │   │   │   ├── switch_haptics.h
+│           │   │   │   ├── switch_motion.h
+│           │   │   │   └── switch_spi.h
+│           │   │   ├── usb
+│           │   │   │   ├── desc_bos.h
+│           │   │   │   ├── gcinput.h
+│           │   │   │   ├── ginput_usbd.h
+│           │   │   │   ├── sinput.h
+│           │   │   │   ├── swpro.h
+│           │   │   │   ├── usb.h
+│           │   │   │   ├── webusb.h
+│           │   │   │   ├── xinput.h
+│           │   │   │   └── xinput_usbd.h
+│           │   │   ├── utilities
+│           │   │   │   ├── boot.h
+│           │   │   │   ├── callback.h
+│           │   │   │   ├── capabilities.h
+│           │   │   │   ├── crosscore_snapshot.h
+│           │   │   │   ├── erm_simulator.h
+│           │   │   │   ├── hooks.h
+│           │   │   │   ├── hwtest.h
+│           │   │   │   ├── interval.h
+│           │   │   │   ├── music_notes.h
+│           │   │   │   ├── pcm.h
+│           │   │   │   ├── pcm_samples.h
+│           │   │   │   ├── ringbuffer.h
+│           │   │   │   ├── settings.h
+│           │   │   │   ├── static_config.h
+│           │   │   │   ├── sysmon.h
+│           │   │   │   └── transport.h
+│           │   │   └── wired
+│           │   │       ├── gamecube.h
+│           │   │       ├── n64.h
+│           │   │       ├── n64_crc.h
+│           │   │       ├── nesbus.h
+│           │   │       └── wired.h
+│           │   ├── pio
+│           │   │   ├── joybus.pio
+│           │   │   ├── nserial.pio
+│           │   │   └── ws2812.pio
+│           │   ├── pkg.yml
+│           │   └── src
+│           │       ├── devices
+│           │       │   ├── animations
+│           │       │   │   ├── anm_breathe.c
+│           │       │   │   ├── anm_fairy.c
+│           │       │   │   ├── anm_handler.c
+│           │       │   │   ├── anm_idle.c
+│           │       │   │   ├── anm_none.c
+│           │       │   │   ├── anm_rainbow.c
+│           │       │   │   ├── anm_react.c
+│           │       │   │   ├── anm_shutdown.c
+│           │       │   │   ├── anm_utility.c
+│           │       │   │   ├── or_flash.c
+│           │       │   │   ├── or_indicate.c
+│           │       │   │   ├── ply_blink.c
+│           │       │   │   ├── ply_chase.c
+│           │       │   │   ├── ply_idle.c
+│           │       │   │   └── ply_shutdown.c
+│           │       │   ├── battery.c
+│           │       │   ├── bluetooth.c
+│           │       │   ├── devices.c
+│           │       │   ├── fuelgauge.c
+│           │       │   ├── haptics.c
+│           │       │   ├── rgb.c
+│           │       │   └── wlan.c
+│           │       ├── drivers
+│           │       │   ├── adc
+│           │       │   │   └── mcp3002.c
+│           │       │   ├── battery
+│           │       │   │   └── bq25180.c
+│           │       │   ├── bluetooth
+│           │       │   │   └── esp32_hojabaseband.c
+│           │       │   ├── fuelgauge
+│           │       │   │   ├── adc_fuelgauge.c
+│           │       │   │   └── bq27621g1.c
+│           │       │   ├── haptic
+│           │       │   │   └── drv2605l.c
+│           │       │   ├── imu
+│           │       │   │   └── lsm6dsr.c
+│           │       │   └── mux
+│           │       │       ├── pi3usb4000a.c
+│           │       │       └── tmux1204.c
+│           │       ├── hal
+│           │       │   └── rp2040
+│           │       │       ├── adc_hal.c
+│           │       │       ├── bluetooth_hal.c
+│           │       │       ├── erm_hal.c
+│           │       │       ├── flash_hal.c
+│           │       │       ├── gpio_hal.c
+│           │       │       ├── i2c_hal.c
+│           │       │       ├── joybus_gc_hal.c
+│           │       │       ├── joybus_n64_hal.c
+│           │       │       ├── lra_hal.c
+│           │       │       ├── mutex_hal.c
+│           │       │       ├── nesbus_hal.c
+│           │       │       ├── rgb_hal.c
+│           │       │       ├── spi_hal.c
+│           │       │       ├── sys_hal.c
+│           │       │       ├── usb_hal.c
+│           │       │       └── wlan_hal.c
+│           │       ├── hoja.c
+│           │       ├── hoja_comms.c
+│           │       ├── input
+│           │       │   ├── analog.c
+│           │       │   ├── dpad.c
+│           │       │   ├── hover.c
+│           │       │   ├── idle_manager.c
+│           │       │   ├── imu.c
+│           │       │   ├── macros
+│           │       │   │   ├── macro_mode.c
+│           │       │   │   ├── macro_pairing.c
+│           │       │   │   ├── macro_pcmdebug.c
+│           │       │   │   ├── macro_shutdown.c
+│           │       │   │   └── macro_tourney.c
+│           │       │   ├── macros.c
+│           │       │   ├── mapper.c
+│           │       │   ├── snapback
+│           │       │   │   ├── snapback_auto.c
+│           │       │   │   ├── snapback_lpf.c
+│           │       │   │   └── snapback_utils.c
+│           │       │   ├── snapback.c
+│           │       │   ├── snapback_dataset.txt
+│           │       │   ├── stick_deadzone.c
+│           │       │   └── stick_scaling.c
+│           │       ├── switch
+│           │       │   ├── analog spi notes
+│           │       │   ├── command table conversion.txt
+│           │       │   ├── oldswitch_haptics__
+│           │       │   ├── switch_analog.c
+│           │       │   ├── switch_commands.c
+│           │       │   ├── switch_haptics.c
+│           │       │   ├── switch_motion.c
+│           │       │   └── switch_spi.c
+│           │       ├── usb
+│           │       │   ├── desc_bos.c
+│           │       │   ├── gcinput.c
+│           │       │   ├── ginput_usbd.c
+│           │       │   ├── sinput.c
+│           │       │   ├── swpro.c
+│           │       │   ├── usb.c
+│           │       │   ├── webusb.c
+│           │       │   ├── xinput.c
+│           │       │   └── xinput_usbd.c
+│           │       ├── utilities
+│           │       │   ├── boot.c
+│           │       │   ├── erm_simulator.c
+│           │       │   ├── hooks.c
+│           │       │   ├── interval.c
+│           │       │   ├── pcm.c
+│           │       │   ├── reboot.c
+│           │       │   ├── ringbuffer.c
+│           │       │   ├── settings.c
+│           │       │   ├── static_config.c
+│           │       │   ├── sysmon.c
+│           │       │   └── transport.c
+│           │       └── wired
+│           │           ├── gamecube.c
+│           │           ├── n64.c
+│           │           ├── nesbus.c
+│           │           └── wired.c
+│           └── main.c
+├── hardware
+│   ├── pcb
+│   ├── readme.md
+│   ├── schematics
+│   │   └── Gemini_Generated_Image_365cs365cs365cs3.png
+│   └── wiring
+├── logs
+│   ├── 260314
+│   │   ├── photos
+│   │   │   ├── prototype_01.jpeg
+│   │   │   ├── prototype_02.jpeg
+│   │   │   ├── prototype_03.jpeg
+│   │   │   ├── prototype_04.jpeg
+│   │   │   └── prototype_05.jpeg
+│   │   └── readme.md
+│   └── 260318
+│       └── readme.md
+├── protocol
+│   └── arcade-link
+│       └── specification.md
+├── refs
+│   ├── esp32_pinout.png
+│   ├── first_run_pico_inputs.png
+│   ├── readme.md
+│   └── rpi_pico_pinout.jpg
+├── structure.txt
+└── tools
+    └── debug_serial
+
+76 directories, 292 files
